@@ -23,6 +23,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include <stdio.h>
 
 #ifdef RTE_CMSIS_RTOS2_RTX5
 /**
@@ -73,7 +74,7 @@ static void SystemClock_Config(void);
 static void Error_Handler(void);
 static void MPU_Config(void);
 static void CPU_CACHE_Enable(void);
-
+int stdout_init (void);
 /* Private functions ---------------------------------------------------------*/
 
 /**
@@ -110,6 +111,8 @@ int main(void)
 
   /* Add your application code here
      */
+		 stdout_init ();
+		 printf("Hello Vives\n");
 
 #ifdef RTE_CMSIS_RTOS2
   /* Initialize CMSIS-RTOS2 */
